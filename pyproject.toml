@@ -1,0 +1,48 @@
+[project]
+name = "fact"
+version = "0.1.0"
+description = "Focused Attention Consistency Training (FACT) — CS224N project"
+requires-python = ">=3.11"
+dependencies = [
+    "torch>=2.3",
+    "transformers>=4.45",
+    "peft>=0.13",
+    "datasets>=2.20",
+    "accelerate>=0.33",
+    "modal>=0.64",
+    "openai>=1.40",
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "seaborn",
+    "tqdm",
+    "pyyaml",
+    "rich",
+    "huggingface_hub",
+    "python-dotenv",
+]
+
+[dependency-groups]
+dev = [
+    "ruff",
+    "pyright",
+    "pytest",
+    "ipykernel",
+    "jupyterlab",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]
+
+[tool.pyright]
+pythonVersion = "3.11"
+typeCheckingMode = "basic"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
